@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color colorPrimary = Color(0xff3300D2);
+  static const Color colorPrimary = Color(0xff141326);
   static const Color colorSecondary = Color(0xffFF52FF);
   static const Color gradientOne = Color(0xff141326);
   static const Color gradientTwo = Color(0xffFF52FF);
   static const Color gradientThree = Color(0xff3300D2);
-  static const Color color9929E = Color(0xff9929E);
+  static const Color color9929E = Color(0x0ff9929e);
 
 
   static const Color white = Colors.white;

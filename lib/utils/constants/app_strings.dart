@@ -3,6 +3,7 @@ class Strings {
   static const String stoxplay = "Stoxplay";
   static const String login = "Log In";
   static const String email = "Email";
+  static const String getStarted = 'GET STARTED';
   static const String userName = "User Name";
   static const String dob = "DATE OF BIRTH";
   static const String verification = "Verification";
