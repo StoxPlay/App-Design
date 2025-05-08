@@ -1,11 +1,13 @@
-class RouteList{
-  RouteList._();
-  static const String loginPage = '/loginPage';
-  static const String otpScreen = '/otpScreen';
-  static const String createYourProfileScreen = '/createYourProfileScreen';
-  static const String homeScreen = '/homeScreen';
-  static const String dashboardScreen = '/dashboardScreen';
-  static const String contestScreen = '/contestScreen';
-  static const String stockSelectionScreen = '/stockSelectionScreen';
-  static const String battleGroundScreen ='/battleGroundScreen';
+import 'package:flutter/cupertino.dart';
+import 'package:stoxplay/features/auth/login_page.dart';
+import 'package:stoxplay/features/auth/singup_page.dart';
+import 'package:stoxplay/features/splash_page/splash_page.dart';
+import 'package:stoxplay/utils/constants/app_routes.dart';
+
+class RouteList {
+  static Map<String, WidgetBuilder> routes = {
+    AppRoutes.splashPage: (context) => const SplashPage(),
+    AppRoutes.loginPage: (context) =>  LoginPage(),
+    AppRoutes.signUpPage: (context) =>  SignUpPage(),
+  };
 }

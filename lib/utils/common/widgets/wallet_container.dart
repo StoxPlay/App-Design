@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
-import 'package:stoxplay/utils/constants/app_colors.dart' show AppColors;
+import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/extensions/extensions.dart';
 
 class WalletContainer extends StatelessWidget {
@@ -14,11 +14,11 @@ class WalletContainer extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.white),
         borderRadius: BorderRadius.circular(15.r),
-        color: AppColors.gradientOne,
+        color: AppColors.purple661F,
       ),
       child: Row(
         children: [
-          Icon(Icons.account_balance_wallet, color: AppColors.gradientTwo),
+          Icon(Icons.account_balance_wallet, color: AppColors.purple661F),
           TextView(
             text: title ?? '69',
             fontWeight: FontWeight.bold,

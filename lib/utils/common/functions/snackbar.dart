@@ -6,7 +6,7 @@ import 'package:stoxplay/utils/constants/app_colors.dart';
 void showSnackBar({
   required BuildContext context,
   required String message,
-  Color backgroundColor = AppColors.colorSecondary, // Default background color
+  Color backgroundColor = AppColors.redFF00, // Default background color
   int durationInSeconds = 3, // Default duration
 }) {
   ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -16,6 +16,7 @@ void showSnackBar({
         alignment: Alignment.centerLeft,
         child: TextView(
           text: message,
+          fontColor: AppColors.white,
         ),
       ),
       backgroundColor: backgroundColor,
@@ -26,7 +27,7 @@ void showSnackBar({
 
 void showSnackBarUsingKey({
   required String message,
-  Color backgroundColor = AppColors.colorSecondary, // Default background color
+  Color backgroundColor = AppColors.redFF00, // Default background color
   int durationInSeconds = 3, // Default duration
 }) {
   snackBarKey.currentState!.removeCurrentSnackBar();

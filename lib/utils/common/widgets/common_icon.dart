@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
@@ -19,14 +18,14 @@ class CommonIcon extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                  color: shadowColor ?? AppColors.blue,
+                  color: shadowColor ?? AppColors.blue2E92,
                   spreadRadius: 1.0,
                   blurRadius: 1.0)
             ],
-            border: Border.all(color: AppColors.blue)),
+            border: Border.all(color: AppColors.blue2E92)),
         child: Icon(
           icon,
-          color: AppColors.blue,
+          color: AppColors.blue2E92,
           size: iconSize ?? 15.sp,
         ));
   }

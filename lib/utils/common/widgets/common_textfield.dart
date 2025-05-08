@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -8,38 +7,40 @@ import 'package:stoxplay/utils/common/widgets/text_view.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
 
 class CommonTextfield extends StatelessWidget {
-  const CommonTextfield(
-      {Key? key,
-        required this.controller,
-        this.icon,
-        required this.title,
-        this.keyboardType,
-        this.horizontalPadding,
-        this.maxlines = 1,
-        this.height = 50,
-        this.secondIcon,
-        this.onIconTap,
-        this.onSecondIconTap,
-        this.obscureText = false,
-        this.textInputAction,
-        this.onSubmitted,
-        this.maxLength,
-        this.hintText,
-        this.focusColor,
-        this.enableInteractiveSelection,
-        this.onChanged,
-        this.prefixText,
-        this.textColor,
-        this.readOnly,
-        this.onTap,
-        this.inputFormatters})
-      : super(key: key);
+  const CommonTextfield({
+    Key? key,
+    required this.controller,
+    this.icon,
+    required this.title,
+    this.keyboardType,
+    this.horizontalPadding,
+    this.maxlines = 1,
+    this.height = 50,
+    this.secondIcon,
+    this.onIconTap,
+    this.onSecondIconTap,
+    this.obscureText = false,
+    this.textInputAction,
+    this.onSubmitted,
+    this.maxLength,
+    this.hintText,
+    this.focusColor,
+    this.enableInteractiveSelection,
+    this.onChanged,
+    this.prefixText,
+    this.textColor,
+    this.readOnly,
+    this.onTap,
+    this.isCompulsory = false,
+    this.inputFormatters,
+  }) : super(key: key);
 
   final TextEditingController controller;
   final dynamic icon;
   final IconData? secondIcon;
   final String title;
   final String? hintText;
+  final bool? isCompulsory;
   final String? prefixText;
   final bool? enableInteractiveSelection;
   final double? horizontalPadding;
@@ -54,7 +55,7 @@ class CommonTextfield extends StatelessWidget {
   final void Function(String)? onSubmitted;
   final void Function(String)? onChanged;
   final int? maxLength;
-  final bool? readOnly ;
+  final bool? readOnly;
   final Color? focusColor;
   final Color? textColor;
   final List<TextInputFormatter>? inputFormatters;
@@ -63,38 +64,63 @@ class CommonTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextView(
-          text: title,
-          fontColor: AppColors.white,
+          text: '$title${isCompulsory ?? false ? '*' : ''}',
+          fontColor: AppColors.black,
         ),
         SizedBox(height: 5.h),
         Container(
           height: 45.h,
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10.r)),
-            color: AppColors.white,
+            color: AppColors.whiteF9F9,
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.blue7E.withOpacity(0.2),
+                blurRadius: 1,
+                spreadRadius: 0,
+              ),
+              BoxShadow(
+                color: AppColors.black40,
+                blurRadius: 4.0,
+                spreadRadius: 0.0,
+                offset: const Offset(0, 0),
+              ),
+            ],
           ),
-          child: TextField(
-            onTap: onTap,
-            cursorColor: AppColors.colorPrimary,
-            controller: controller,
-            readOnly: readOnly??false,
-            textAlignVertical: TextAlignVertical.center,
-            keyboardType: keyboardType,
-            cursorHeight: 15.h,
-            maxLength: maxLength,
-            decoration: InputDecoration(
-              counterText: '',
-              contentPadding: EdgeInsets.only(left: 20.w, right: 30.w, top: 40.h, bottom: 13.h),
-              hintText: hintText ?? title,
-              prefixText: prefixText,
-              alignLabelWithHint: true,
-              prefixStyle: TextStyle(color: AppColors.black, fontSize: 16.sp),
-              suffixIcon: Icon(secondIcon, color: AppColors.lightGrey),
-              hintStyle: TextStyle(color: AppColors.lightGrey),
-              border: InputBorder.none
-            ),
+          child: Row(
+            children: [
+              prefixText != null
+                  ? TextView(text: prefixText!, fontSize: 17.sp)
+                  : SizedBox.shrink(),
+              Expanded(
+                child: TextField(
+                  onTap: onTap,
+                  cursorColor: AppColors.blue7E,
+                  controller: controller,
+                  readOnly: readOnly ?? false,
+                  textAlignVertical: TextAlignVertical.center,
+                  keyboardType: keyboardType,
+                  cursorHeight: 18.h,
+                  maxLength: maxLength,
+                  buildCounter:
+                      (
+                        context, {
+                        required currentLength,
+                        required isFocused,
+                        required maxLength,
+                      }) => SizedBox.shrink(),
+                  decoration: InputDecoration.collapsed(
+                    hintText: hintText ?? title,
+                    hintStyle: TextStyle(color: AppColors.black40),
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ],

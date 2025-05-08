@@ -7,6 +7,8 @@ class Strings {
   static const String userName = "User Name";
   static const String dob = "DATE OF BIRTH";
   static const String verification = "Verification";
+  static const String name = "NAME";
+
   static const String weHaveSentACodeToYourNumber = "We have sent a code to your number";
   static const String dummyMobileNumber = "xxxxxxxx25";
   static const String ddMMYYYY = "DD/MM/YYYY";
@@ -14,12 +16,16 @@ class Strings {
   static const String createYourProfile = "Create your pofile";
   static const String password = "Password";
   static const String phoneNumber = "Phone number";
+  static const String emailExample = "example@gmail.com";
   static const String mobileNumber = "Mobile number";
   static const String rememberMe = "Remember me";
   static const String code = "Code";
+  static const String referralId = "Referral ID";
   static const String resendIn = "Resend in ";
   static const String forgotPassword = "Forgot Password";
   static const String pleaseSignInToExistingAccount = "Please sign in to existing account";
+  static const String pleaseEnter4DigitOTP = "Please enter 4 digit OTP";
+  static const String pleaseSignUpToGetStarted = "Please sign up to get started";
   static const String weWillSendYouOTP = "We will send you One Time Password(OTP)";
   static const String signUp = "Sign Up";
   static const String verify = "VERIFY";
@@ -30,6 +36,7 @@ class Strings {
   static const String termsAndConditions = "By continuing, you agree to our terms & conditions and privacy policies.";
   static const String sambhavatTechnologies = "@SAMBHAVAT TECHNOLOGIES PRIVATE LIMITED.";
   static const String pleaseCheckTermsAndConditions = "Please check terms and conditions";
+  static const String pleaseEnterValidMobileNumber = "Please enter valid mobile number";
   static const String uploadYourPhoto = "Upload your photo";
   static const String camera = "Camera";
   static const String gallery = "Gallery";
@@ -57,4 +64,21 @@ class Strings {
   static const String bhavesh = "Bhavesh.Stoxplay";
   static const String tenX = "10x";
   static const String join = "Join";
+
+  // App Name
+  static const String appName = 'StoxPlay';
+
+  // No Internet Dialog
+  static const String noInternetConnection = 'No Internet Connection';
+  static const String pleaseCheckYourInternet = 'Please check your internet connection and try again';
+  static const String retry = 'Retry';
+  static const String goToSettings = 'Go to Settings';
+
+  // Common
+  static const String ok = 'OK';
+  static const String cancel = 'Cancel';
+  static const String done = 'Done';
+  static const String error = 'Error';
+  static const String success = 'Success';
+  static const String loading = 'Loading...';
 }

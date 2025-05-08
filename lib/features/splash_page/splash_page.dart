@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stoxplay/features/auth_page/login_page/login_page.dart';
+import 'package:stoxplay/config/route_list.dart';
+import 'package:stoxplay/utils/common/widgets/app_button.dart';
+import 'package:stoxplay/utils/common/widgets/common_stoxplay_icon.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/constants/app_assets.dart';
+import 'package:stoxplay/utils/constants/app_routes.dart';
 import 'package:stoxplay/utils/constants/app_strings.dart';
 
 class SplashPage extends StatefulWidget {
@@ -26,10 +29,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Positioned.fill(
               bottom: 200,
-              child: Image.asset(
-                AppAssets.splashStrokes,
-                fit: BoxFit.fitWidth,
-              ),
+              child: Image.asset(AppAssets.splashStrokes, fit: BoxFit.fitWidth),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -38,23 +38,7 @@ class _SplashPageState extends State<SplashPage> {
                 SizedBox(height: 200.h),
                 Center(
                   child: Column(
-                    children: [
-                      Image.asset(
-                        AppAssets.appIcon,
-                        width: 100.w,
-                        height: 110.h,
-                      ),
-                      SizedBox(height: 5.h),
-                      Text(
-                        Strings.stoxplay,
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 45.sp,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                    children: [CommonStoxplayIcon(), CommonStoxplayText()],
                   ),
                 ),
                 const Spacer(),
@@ -64,27 +48,11 @@ class _SplashPageState extends State<SplashPage> {
                     left: 20.w,
                     right: 20.w,
                   ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(vertical: 15.h),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.r),
-                            ),
-                          ),
-                          child: Text(
-                            Strings.getStarted,
-                            style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                  child: AppButton(
+                    text: Strings.getStarted,
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.loginPage);
+                    },
                   ),
                 ),
               ],

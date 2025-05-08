@@ -1,43 +1,70 @@
-import 'dart:async';
-
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-
-import 'network_manager.dart';
-
+import 'package:stoxplay/utils/common/widgets/no_internet_dialog.dart';
 
 class AppComponentBase {
-  final NetworkManager _networkManager = NetworkManager();
-  final StreamController<bool> _progressDialogStreamController =
-  StreamController.broadcast();
+  static final AppComponentBase _instance = AppComponentBase._internal();
+  factory AppComponentBase() => _instance;
+  AppComponentBase._internal();
 
-  Stream<bool> get progressDialogStream =>
-      _progressDialogStreamController.stream;
-
-  AppComponentBase._privateConstructor();
-
-  static final AppComponentBase instance =
-  AppComponentBase._privateConstructor();
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  bool _isDialogShowing = false;
 
   Future<void> init() async {
-    await _networkManager.initialiseNetworkManager();
-//    await SharedPreference.instance.initPreference();
+    await _checkInitialConnectivity();
+    _initConnectivity();
   }
 
-  void showProgressDialog() => _progressDialogStreamController.sink.add(true);
-
-  void hideProgressDialog() => _progressDialogStreamController.sink.add(false);
-
-  void dispose() {
-    _progressDialogStreamController.close();
-    _networkManager.disposeStream();
+  Future<void> _checkInitialConnectivity() async {
+    final result = await Connectivity().checkConnectivity();
+    if (result.contains(ConnectivityResult.none)) {
+      _showNoInternetDialog();
+    }
   }
 
-/*
-  SharedPreference get sharedPreference => SharedPreference.instance;
-*/
+  void _initConnectivity() {
+    Connectivity().onConnectivityChanged.listen((List<ConnectivityResult> result) {
+      if (result.contains(ConnectivityResult.none)) {
+        _showNoInternetDialog();
+      } else {
+        _hideNoInternetDialog();
+      }
+    });
+  }
 
-  NetworkManager get networkManage => _networkManager;
+  void _showNoInternetDialog() {
+    if (!_isDialogShowing && navigatorKey.currentContext != null) {
+      _isDialogShowing = true;
+      showDialog(
+        context: navigatorKey.currentContext!,
+        barrierDismissible: false,
+        builder: (context) => NoInternetDialog(
+          onRetry: () {
+            _hideNoInternetDialog();
+            _checkConnectivity();
+          },
+        ),
+      );
+    }
+  }
 
-//  APIProvider get apiProvider => getIt.get<APIProvider>();
-}
+  void _hideNoInternetDialog() {
+    if (_isDialogShowing && navigatorKey.currentContext != null) {
+      _isDialogShowing = false;
+      Navigator.of(navigatorKey.currentContext!).pop();
+    }
+  }
+
+  Future<void> _checkConnectivity() async {
+    final result = await Connectivity().checkConnectivity();
+    if (result == ConnectivityResult.none) {
+      _showNoInternetDialog();
+    }
+  }
+
+  // Public method to check connectivity from anywhere in the app
+  Future<bool> isConnected() async {
+    final result = await Connectivity().checkConnectivity();
+    return result != ConnectivityResult.none;
+  }
+} 

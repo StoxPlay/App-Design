@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
@@ -6,45 +5,73 @@ import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/constants/app_strings.dart';
 import 'package:stoxplay/utils/extensions/extensions.dart';
 
-class Termsandconditionwidget extends StatelessWidget {
-  const Termsandconditionwidget({super.key});
+class TermsConditionWidget extends StatelessWidget {
+  const TermsConditionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        RichText(
-            text: TextSpan(children: [
-              TextSpan(
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              children: [
+                TextSpan(
                   text: "By continuing, you agree to our ",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    fontSize: 10.sp,
-                    color: AppColors.grey,
-                  )),
-              TextSpan(
+                    fontSize: 14.sp,
+                    color: AppColors.black,
+                    fontWeight: FontWeight.w300,
+                    height: 18 / 14,
+                  ),
+                ),
+                TextSpan(
                   text: "terms & conditions",
-                  style: TextStyle(fontFamily: 'Sofia Sans', fontSize: 10.sp)),
-            ])),
-        RichText(
-            text: TextSpan(children: [
-              TextSpan(
-                  text: "and ",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    fontSize: 11.sp,
-                    color: AppColors.grey,
-                  )),
-              TextSpan(
+                    fontSize: 14.sp,
+                    color: AppColors.black,
+                    fontWeight: FontWeight.w500,
+                    height: 18 / 14,
+                  ),
+                ),
+                TextSpan(
+                  text: " and ",
+                  style: TextStyle(
+                    fontFamily: 'Sofia Sans',
+                    color: AppColors.black,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w300,
+                    height: 18 / 14,
+                  ),
+                ),
+                TextSpan(
                   text: "privacy policies.",
-                  style: TextStyle(fontFamily: 'Sofia Sans', fontSize: 11.sp)),
-            ])),
-        TextView(
-          fontSize: 10.sp,
-          text: Strings.sambhavatTechnologies,
-          fontColor: AppColors.grey,
-        ),
-      ],
-    ).paddingBottom(10.h);
+                  style: TextStyle(
+                    fontFamily: 'Sofia Sans',
+                    fontSize: 14.sp,
+                    color: AppColors.black,
+                    fontWeight: FontWeight.w500,
+                    height: 18 / 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 4),
+          TextView(
+            fontSize: 14.sp,
+            text: Strings.sambhavatTechnologies,
+            fontWeight: FontWeight.w300,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
@@ -20,7 +19,7 @@ class CommonButton extends StatelessWidget {
         height: height?? 45.h,
         width: width?? MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGrey),
+            border: Border.all(color: AppColors.white70),
             gradient: LinearGradient(
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,

@@ -13,7 +13,7 @@ class HomeScreenAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: AppColors.transparentColor,
+      backgroundColor: AppColors.transparent,
       leading: CircleAvatar(
         child: Image.asset(
           'assets/images/app_icon.png',

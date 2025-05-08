@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Add this for SystemUiOverlayStyle
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stoxplay/config/route_list.dart';
 import 'package:stoxplay/features/splash_page/splash_page.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
+import 'package:stoxplay/utils/constants/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,10 +21,11 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             title: 'StoxPlay',
             debugShowCheckedModeBanner: false,
+            routes: RouteList.routes,
             theme: ThemeData(
               useMaterial3: true,
               primaryColor: AppColors.colorPrimary,
-              scaffoldBackgroundColor: AppColors.gradientOne,
+              scaffoldBackgroundColor: AppColors.colorPrimary,
               colorScheme: ColorScheme.fromSeed(
                 seedColor: AppColors.colorPrimary,
                 primary: AppColors.colorPrimary,
@@ -33,11 +36,12 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColors.colorPrimary,
                 foregroundColor: Colors.white,
                 elevation: 0,
-                systemOverlayStyle: SystemUiOverlayStyle.light, // For AppBar status bar
+                systemOverlayStyle:
+                    SystemUiOverlayStyle.light, // For AppBar status bar
               ),
               elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.white,
+                  backgroundColor: AppColors.purple661F,
                   foregroundColor: AppColors.black,
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w600,
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColors.colorPrimary,
               ),
             ),
-            home: const SplashPage(),
+            initialRoute: AppRoutes.splashPage,
           ),
         );
       },
