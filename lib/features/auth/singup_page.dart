@@ -9,6 +9,7 @@ import 'package:stoxplay/utils/common/widgets/termsAndConditionWidget.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
 import 'package:stoxplay/utils/constants/app_assets.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
+import 'package:stoxplay/utils/constants/app_routes.dart';
 import 'package:stoxplay/utils/constants/app_strings.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -108,7 +109,12 @@ class SignUpPage extends StatelessWidget {
                               ],
                             ),
                             Gap(20.h),
-                            AppButton(text: Strings.verify, onPressed: () {}),
+                            AppButton(
+                              text: Strings.signIn.toUpperCase(),
+                              onPressed: () {
+                                Navigator.pushNamed(context, AppRoutes.homePage);
+                              },
+                            ),
                           ],
                         ),
                       ),

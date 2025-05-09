@@ -22,8 +22,16 @@ class CommonStoxplayIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(AppAssets.appIcon, width: iconWidth.w, height: iconHeight.h),
-        Image.asset(AppAssets.iconShadow, width: shadowWidth.w, height: shadowHeight.h),
+        Image.asset(
+          AppAssets.appIcon,
+          width: iconWidth.w,
+          height: iconHeight.h,
+        ),
+        Image.asset(
+          AppAssets.iconShadow,
+          width: shadowWidth.w,
+          height: shadowHeight.h,
+        ),
       ],
     );
   }

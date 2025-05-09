@@ -28,6 +28,7 @@ class Strings {
   static const String pleaseSignUpToGetStarted = "Please sign up to get started";
   static const String weWillSendYouOTP = "We will send you One Time Password(OTP)";
   static const String signUp = "Sign Up";
+  static const String signIn = "Sign In";
   static const String verify = "VERIFY";
   static const String upload = "UPLOAD";
   static const String dontHaveAnAccount = "Don't have an account";
