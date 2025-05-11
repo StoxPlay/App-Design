@@ -43,7 +43,7 @@ class CommonStoxplayText extends StatelessWidget {
   final double shadowOffsetY;
   final double shadowBlurRadius;
 
-  const CommonStoxplayText({
+   const CommonStoxplayText({
     super.key,
     this.fontSize = 50.0,
     this.letterSpacing = 0.0,

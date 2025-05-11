@@ -29,13 +29,13 @@ class Strings {
   static const String weWillSendYouOTP = "We will send you One Time Password(OTP)";
   static const String signUp = "Sign Up";
   static const String signIn = "Sign In";
-  static const String verify = "VERIFY";
+  static const String verifyOTP = "VERIFY OTP";
   static const String upload = "UPLOAD";
   static const String dontHaveAnAccount = "Don't have an account";
   static const String haveAnInviteCode = "Have an Invite Code?";
   static const String iCertifyThatIAmAbove18Years = "I certify that I am above 18 years";
   static const String termsAndConditions = "By continuing, you agree to our terms & conditions and privacy policies.";
-  static const String sambhavatTechnologies = "@SAMBHAVAT TECHNOLOGIES PRIVATE LIMITED.";
+  static const String zestoxTechnologies = "@ZESTOX TECHNOLOGIES ";
   static const String pleaseCheckTermsAndConditions = "Please check terms and conditions";
   static const String pleaseEnterValidMobileNumber = "Please enter valid mobile number";
   static const String uploadYourPhoto = "Upload your photo";

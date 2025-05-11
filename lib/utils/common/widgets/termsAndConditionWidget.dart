@@ -24,8 +24,8 @@ class TermsConditionWidget extends StatelessWidget {
                   text: "By continuing, you agree to our ",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    fontSize: 14.sp,
-                    color: AppColors.black,
+                    fontSize: 10.sp,
+                    color: AppColors.black6666,
                     fontWeight: FontWeight.w300,
                     height: 18 / 14,
                   ),
@@ -34,7 +34,7 @@ class TermsConditionWidget extends StatelessWidget {
                   text: "terms & conditions",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    fontSize: 14.sp,
+                    fontSize: 10.sp,
                     color: AppColors.black,
                     fontWeight: FontWeight.w500,
                     height: 18 / 14,
@@ -44,8 +44,8 @@ class TermsConditionWidget extends StatelessWidget {
                   text: " and ",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    color: AppColors.black,
-                    fontSize: 14.sp,
+                    color: AppColors.black6666,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.w300,
                     height: 18 / 14,
                   ),
@@ -54,7 +54,7 @@ class TermsConditionWidget extends StatelessWidget {
                   text: "privacy policies.",
                   style: TextStyle(
                     fontFamily: 'Sofia Sans',
-                    fontSize: 14.sp,
+                    fontSize: 10.sp,
                     color: AppColors.black,
                     fontWeight: FontWeight.w500,
                     height: 18 / 14,
@@ -65,8 +65,8 @@ class TermsConditionWidget extends StatelessWidget {
           ),
           SizedBox(height: 4),
           TextView(
-            fontSize: 14.sp,
-            text: Strings.sambhavatTechnologies,
+            fontSize: 10.sp,
+            text: Strings.zestoxTechnologies,
             fontWeight: FontWeight.w300,
             textAlign: TextAlign.center,
           ),

@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColors.colorPrimary,
               ),
             ),
-            initialRoute: AppRoutes.homePage,
+            initialRoute: AppRoutes.splashPage,
           ),
         );
       },

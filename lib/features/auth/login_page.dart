@@ -72,21 +72,22 @@ class LoginPage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       CommonStoxplayIcon(
-                                        iconHeight: 65.h,
-                                        iconWidth: 65.w,
+                                        iconHeight: 55.h,
+                                        iconWidth: 55.w,
                                         shadowHeight: 15.h,
-                                        shadowWidth: 100.w,
+                                        shadowWidth: 80.w,
                                       ),
-                                      CommonStoxplayText(fontSize: 60.sp),
+                                      CommonStoxplayText(fontSize: 50.sp),
                                     ],
                                   ),
                                 ),
                               ),
                             ],
                           ),
+                          Gap(30.h),
                           TextView(
                             text: Strings.login,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w700,
                           ),
                           TextView(
@@ -97,12 +98,12 @@ class LoginPage extends StatelessWidget {
                             fontColor: AppColors.black39,
                             fontWeight: FontWeight.w300,
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 40.h),
                           ShadowContainer(
                             child: Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 30.w,
-                                vertical: 40.h,
+                                vertical: 28.h,
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,7 +206,7 @@ class LoginPage extends StatelessWidget {
                                         ],
                                       ),
                                   AppButton(
-                                    text: Strings.verify,
+                                    text: Strings.verifyOTP,
                                     onPressed: () {
                                       if (stepper.value == 0) {
                                         if (mobileNoController.text.length !=

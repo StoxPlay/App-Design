@@ -1,16 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stoxplay/config/route_list.dart';
 import 'package:stoxplay/utils/common/widgets/common_appbar_title.dart';
 import 'package:stoxplay/utils/common/widgets/common_button.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
 import 'package:stoxplay/utils/constants/app_assets.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/constants/app_constants.dart';
-import 'package:stoxplay/utils/constants/app_strings.dart';
-import 'package:stoxplay/utils/constants/app_strings.dart';
 import 'package:stoxplay/utils/constants/app_strings.dart';
 import 'package:stoxplay/utils/extensions/extensions.dart';
 
@@ -141,7 +136,7 @@ class HomePage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.2), // Adjust as needed
           border: Border.all(
-            color: AppColors.purple661F.withOpacity(0.1),
+            color: AppColors.purple661F.withOpacity(0.05),
             width: 1,
           ),
           borderRadius: const BorderRadius.only(
@@ -157,15 +152,18 @@ class HomePage extends StatelessWidget {
           child: ValueListenableBuilder(
             valueListenable: currentIndex,
             builder: (context, index, _) {
-              return BottomNavigationBar(
-                showSelectedLabels: false,
-                showUnselectedLabels: false,
-                items: navBarList,
-                currentIndex: currentIndex.value,
-                type: BottomNavigationBarType.fixed,
-                onTap: (value) {
-                  currentIndex.value = value;
-                },
+              return SizedBox(
+                height: 84.h,
+                child: BottomNavigationBar(
+                  showSelectedLabels: false,
+                  showUnselectedLabels: false,
+                  items: navBarList,
+                  currentIndex: currentIndex.value,
+                  type: BottomNavigationBarType.fixed,
+                  onTap: (value) {
+                    currentIndex.value = value;
+                  },
+                ),
               );
             },
           ),

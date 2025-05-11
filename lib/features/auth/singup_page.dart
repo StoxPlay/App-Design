@@ -53,12 +53,12 @@ class SignUpPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CommonStoxplayIcon(
-                                  iconHeight: 65.h,
-                                  iconWidth: 65.w,
+                                  iconHeight: 55.h,
+                                  iconWidth: 55.w,
                                   shadowHeight: 15.h,
-                                  shadowWidth: 100.w,
+                                  shadowWidth: 80.w,
                                 ),
-                                CommonStoxplayText(fontSize: 60.sp),
+                                CommonStoxplayText(fontSize: 50.sp),
                               ],
                             ),
                           ),
@@ -67,7 +67,7 @@ class SignUpPage extends StatelessWidget {
                     ),
                     TextView(
                       text: Strings.signUp,
-                      fontSize: 35.sp,
+                      fontSize: 40.sp,
                       fontWeight: FontWeight.w700,
                     ),
                     TextView(
