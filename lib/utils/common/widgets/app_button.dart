@@ -29,50 +29,41 @@ class AppButton extends StatelessWidget {
     this.textColor,
     this.backgroundColor,
     this.padding,
-    this.isExpanded = true,
+    this.isExpanded = false,
     this.prefixIcon,
     this.suffixIcon,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final button = ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ?? AppColors.purple661F,
-        padding: padding ?? EdgeInsets.symmetric(vertical: 15.h),
-        shape: RoundedRectangleBorder(
+    final button = GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: height ?? 45.h,
+        width: width ?? MediaQuery.of(context).size.width,
+        padding: padding,
+        decoration: BoxDecoration(
+          color: backgroundColor ?? AppColors.purple661F,
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
         ),
-        minimumSize: Size(width ?? 0, height ?? 45.h),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (prefixIcon != null) ...[
-            prefixIcon!,
-            SizedBox(width: 8.w),
-          ],
-          Text(
+        child: Center(
+          child: Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
-              color: textColor ?? AppColors.white,
-              fontSize: fontSize ?? 16.sp,
+              color: AppColors.white,
+              fontSize: fontSize ?? 18.sp,
               fontWeight: fontWeight ?? FontWeight.w800,
             ),
           ),
-          if (suffixIcon != null) ...[
-            SizedBox(width: 8.w),
-            suffixIcon!,
-          ],
-        ],
+        ),
       ),
     );
 
-    return isExpanded ? Row(
-      children: [
-        Expanded(child: button),
-      ],
-    ) : button;
+    if (isExpanded) {
+      return Expanded(child: button);
+    }
+
+    return button;
   }
-} 
+}

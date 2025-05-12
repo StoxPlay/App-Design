@@ -28,13 +28,15 @@ class _SplashPageState extends State<SplashPage>
   void initState() {
     super.initState();
     _setupAnimations();
-    _controller.forward();
+    Future.delayed(const Duration(milliseconds: 200), () {
+      _controller.forward();
+    });
   }
 
   void _setupAnimations() {
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 1300),
     );
 
     _leftImageAnimation = TweenSequence([
@@ -135,7 +137,7 @@ class _SplashPageState extends State<SplashPage>
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(_leftImageAnimation.value - 15, 0),
+                  offset: Offset(_leftImageAnimation.value - 15.w, 0),
                   child: Image.asset(
                     AppAssets.leftSIcon,
                     width: 60.w,

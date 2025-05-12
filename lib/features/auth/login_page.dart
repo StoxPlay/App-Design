@@ -209,38 +209,37 @@ class LoginPage extends StatelessWidget {
                                     text: Strings.verifyOTP,
                                     onPressed: () {
                                       if (stepper.value == 0) {
-                                        if (mobileNoController.text.length !=
-                                            10) {
-                                          showSnackBar(
-                                            context: context,
-                                            message:
-                                                Strings
-                                                    .pleaseEnterValidMobileNumber,
-                                          );
-                                        } else if (!isCheckboxChecked.value) {
-                                          showSnackBar(
-                                            context: context,
-                                            message:
-                                                Strings
-                                                    .pleaseCheckTermsAndConditions,
-                                          );
-                                        } else {
-                                          stepper.value = 1;
-                                        }
+                                        // if (mobileNoController.text.length !=
+                                        //     10) {
+                                        //   showSnackBar(
+                                        //     context: context,
+                                        //     message:
+                                        //         Strings
+                                        //             .pleaseEnterValidMobileNumber,
+                                        //   );
+                                        // } else if (!isCheckboxChecked.value) {
+                                        //   showSnackBar(
+                                        //     context: context,
+                                        //     message:
+                                        //         Strings
+                                        //             .pleaseCheckTermsAndConditions,
+                                        //   );
+                                        // } else {
+                                        stepper.value = 1;
+                                        // }
                                       } else {
-                                        print(otpController.text.length);
-                                        if (otpController.text.length == 4) {
-                                          Navigator.pushNamed(
-                                            context,
-                                            AppRoutes.signUpPage,
-                                          );
-                                        } else {
-                                          showSnackBar(
-                                            context: context,
-                                            message:
-                                                Strings.pleaseEnter4DigitOTP,
-                                          );
-                                        }
+                                        // if (otpController.text.length == 4) {
+                                        Navigator.pushNamed(
+                                          context,
+                                          AppRoutes.signUpPage,
+                                        );
+                                        // } else {
+                                        //   showSnackBar(
+                                        //     context: context,
+                                        //     message:
+                                        //         Strings.pleaseEnter4DigitOTP,
+                                        //   );
+                                        // }
                                       }
                                     },
                                   ),

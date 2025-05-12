@@ -8,6 +8,7 @@ class AppAssets {
   static const String lightIconShadow = 'assets/images/light_icon_shadow.png';
   static const String notificationIcon = 'assets/icons/notification_icon.png';
   static const String carouselImage = 'assets/images/carousel.png';
+  static const String stoxplayCoin = 'assets/images/stoxplay_coin.png';
 
 
 

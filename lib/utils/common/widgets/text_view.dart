@@ -4,6 +4,7 @@ import 'package:stoxplay/utils/constants/app_colors.dart';
 class TextView extends StatelessWidget {
   final String text;
   final double? fontSize;
+  final double? letterSpacing;
   final Color? fontColor;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
@@ -16,6 +17,7 @@ class TextView extends StatelessWidget {
     this.overflow,
     this.fontWeight,
     this.textDecoration,
+    this.letterSpacing,
     this.textAlign,
     this.fontSize,
     this.fontColor,
@@ -30,6 +32,7 @@ class TextView extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
         overflow: overflow,
+        letterSpacing: letterSpacing,
         color: fontColor ?? AppColors.black,
         fontFamily: 'Sofia Sans',
         decoration: textDecoration
