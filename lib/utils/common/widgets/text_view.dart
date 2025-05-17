@@ -5,6 +5,7 @@ class TextView extends StatelessWidget {
   final String text;
   final double? fontSize;
   final double? letterSpacing;
+  final double? lineHeight;
   final Color? fontColor;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
@@ -15,6 +16,7 @@ class TextView extends StatelessWidget {
     super.key,
     required this.text,
     this.overflow,
+    this.lineHeight,
     this.fontWeight,
     this.textDecoration,
     this.letterSpacing,
@@ -30,6 +32,7 @@ class TextView extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.left,
       style: TextStyle(
         fontSize: fontSize,
+        height: lineHeight,
         fontWeight: fontWeight,
         overflow: overflow,
         letterSpacing: letterSpacing,

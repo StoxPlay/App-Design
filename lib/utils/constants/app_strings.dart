@@ -59,12 +59,15 @@ class Strings {
   static const String pleaseSelectCoLeaderStock = "Please select Co leader stock";
   static const String youHaveSelected11StockPleaseClickNext = "You have selected 11 stocks, please click next!";
   static const String firstSelectTheStock = "First select the stock";
-  static const String pick11StocksFrom22 = "Pick 11 stocks from 22";
+  static const String pick11StocksFrom30 = "Pick 11 stocks from 30";
   static const String points = "Points - 290.0";
   static const String rank = "Rank - 01";
   static const String bhavesh = "Bhavesh.Stoxplay";
   static const String tenX = "10x";
   static const String join = "Join";
+  static const String prizePool = "Prize Pool";
+  static const String flexible  = "Flexible";
+
 
   // App Name
   static const String appName = 'StoxPlay';

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:stoxplay/features/home_page/widgets/contest_widget.dart';
 import 'package:stoxplay/utils/common/widgets/common_appbar_title.dart';
+import 'package:stoxplay/utils/common/widgets/common_bottom_navbar.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
 import 'package:stoxplay/utils/constants/app_assets.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
@@ -13,7 +14,6 @@ import 'package:stoxplay/utils/extensions/extensions.dart';
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
   ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
   List list = [Strings.play, Strings.learn];
 
@@ -62,49 +62,48 @@ class HomePage extends StatelessWidget {
                           separatorBuilder: (context, index) => Gap(15.w),
                           itemCount: list.length,
                           scrollDirection: Axis.horizontal,
-                          itemBuilder:
-                              (context, index) => CommonTabWidget(
-                                onTap: () {
-                                  selectedIndex.value = index;
-                                },
-                                isSelected: selectedIndex.value == index,
-                                title: list[index],
-                              ),
+                          itemBuilder: (context, index) => CommonTabWidget(
+                            onTap: () {
+                              selectedIndex.value = index;
+                            },
+                            isSelected: selectedIndex.value == index,
+                            title: list[index],
+                          ),
                         ),
                       ),
                       Gap(15.h),
                       selectedIndex.value == 0
                           ? Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Divider(
-                                    color: AppColors.black,
-                                  ).paddingTop(5.h),
-                                  Align(
-                                    alignment: Alignment.center,
-                                    child: Container(
-                                      color: AppColors.white,
-                                      child: TextView(
-                                        text: Strings.sectorsPlay,
-                                        fontSize: 18.sp,
-                                      ).paddingSymmetric(horizontal: 20.w),
+                              children: [
+                                Stack(
+                                  children: [
+                                    Divider(
+                                      color: AppColors.black,
+                                    ).paddingTop(5.h),
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Container(
+                                        color: AppColors.white,
+                                        child: TextView(
+                                          text: Strings.sectorsPlay,
+                                          fontSize: 18.sp,
+                                        ).paddingSymmetric(horizontal: 20.w),
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Gap(15.h),
-                              ListView.separated(
-                                physics: NeverScrollableScrollPhysics(),
-                                separatorBuilder: (context, index) => Gap(10.h),
-                                itemCount: contests.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return ContestWidget(data: contests[index]);
-                                },
-                              ),
-                            ],
-                          )
+                                  ],
+                                ),
+                                Gap(15.h),
+                                ListView.separated(
+                                  physics: NeverScrollableScrollPhysics(),
+                                  separatorBuilder: (context, index) => Gap(10.h),
+                                  itemCount: contests.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) {
+                                    return ContestWidget(data: contests[index]);
+                                  },
+                                ),
+                              ],
+                            )
                           : Center(child: Text(Strings.learn)),
                       Gap(10.h),
                     ],
@@ -113,44 +112,6 @@ class HomePage extends StatelessWidget {
               ],
             );
           },
-        ),
-      ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.2), // Adjust as needed
-          border: Border.all(
-            color: AppColors.purple661F.withOpacity(0.05),
-            width: 1,
-          ),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(18),
-            topRight: Radius.circular(18),
-          ),
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(18),
-            topRight: Radius.circular(18),
-          ),
-          child: ValueListenableBuilder(
-            valueListenable: currentIndex,
-            builder: (context, index, _) {
-              return SizedBox(
-                height: 84.h,
-                child: BottomNavigationBar(
-                  showSelectedLabels: false,
-                  showUnselectedLabels: false,
-                  items: navBarList,
-                  currentIndex: currentIndex.value,
-                  type: BottomNavigationBarType.fixed,
-                  onTap: (value) {
-                    currentIndex.value = value;
-                  },
-                ),
-              );
-            },
-          ),
         ),
       ),
     );

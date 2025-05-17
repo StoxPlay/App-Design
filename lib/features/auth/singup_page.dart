@@ -40,7 +40,7 @@ class SignUpPage extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: Image.asset(
-                            AppAssets.lightIconShadow,
+                            AppAssets.lightSplashStrokes,
                             fit:
                                 BoxFit.cover, // Ensure it covers the whole area
                           ),
@@ -112,7 +112,7 @@ class SignUpPage extends StatelessWidget {
                             AppButton(
                               text: Strings.signIn.toUpperCase(),
                               onPressed: () {
-                                Navigator.pushNamed(context, AppRoutes.homePage);
+                                Navigator.pushNamed(context, AppRoutes.mainPage);
                               },
                             ),
                           ],

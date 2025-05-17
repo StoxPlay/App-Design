@@ -8,20 +8,24 @@ class CommonAppbarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        CommonStoxplayIcon(
-          iconHeight: 28.h,
-          iconWidth: 25.w,
-          shadowHeight: 0,
-          shadowWidth: 0,
-        ),
-        Gap(5.w),
-        CommonStoxplayText(
-          fontSize: 22.sp,
-          shadowOffsetY: 2,
-          shadowBlurRadius: 2,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CommonStoxplayIcon(
+              iconHeight: 28.h,
+              iconWidth: 25.w,
+              shadowHeight: 0,
+              shadowWidth: 0,
+            ),
+            Gap(5.w),
+            CommonStoxplayText(
+              fontSize: 22.sp,
+              shadowOffsetY: 2,
+              shadowBlurRadius: 2,
+            ),
+          ],
         ),
       ],
     );

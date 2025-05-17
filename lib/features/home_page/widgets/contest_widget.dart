@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:stoxplay/features/home_page/pages/contest_details_page.dart';
 import 'package:stoxplay/models/contest_model.dart';
 import 'package:stoxplay/utils/common/widgets/app_button.dart';
+import 'package:stoxplay/utils/common/widgets/primary_container.dart';
 import 'package:stoxplay/utils/common/widgets/text_view.dart';
+import 'package:stoxplay/utils/constants/app_assets.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/constants/app_routes.dart';
 import 'package:stoxplay/utils/constants/app_strings.dart';
@@ -16,22 +19,7 @@ class ContestWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: AppColors.blue7E.withOpacity(0.1), width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.blue7E.withOpacity(0.5),
-            blurRadius: 8,
-            spreadRadius: 0.5,
-            offset: Offset(0, 0), // Shadow direction: bottom right
-          ),
-        ],
-      ),
+    return PrimaryContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -92,21 +80,11 @@ class ContestWidget extends StatelessWidget {
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w300,
               ),
-              // Row(
-              //   children: [
-              //     TextView(
-              //       fontColor: AppColors.whiteF9F9,
-              //       text: Strings.timeLeft,
-              //       fontSize: 10.sp,
-              //     ),
-              //     SizedBox(width: 5.w),
-              //     TextView(
-              //       fontColor: AppColors.whiteF9F9,
-              //       text: '20 Min',
-              //       fontSize: 10.sp,
-              //     ),
-              //   ],
-              // ),
+              Image.asset(
+                AppAssets.notificationBellIcon,
+                height: 15.h,
+                width: 15.w,
+              ),
             ],
           ),
         ],

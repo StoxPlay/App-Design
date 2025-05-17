@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Add this for SystemUiOverlayStyle
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stoxplay/config/route_list.dart';
-import 'package:stoxplay/features/splash_page/splash_page.dart';
 import 'package:stoxplay/utils/constants/app_colors.dart';
 import 'package:stoxplay/utils/constants/app_routes.dart';
+import 'package:stoxplay/utils/constants/app_strings.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.light, // Makes status bar icons white
           child: MaterialApp(
-            title: 'StoxPlay',
+            title: Strings.stoxplay,
             debugShowCheckedModeBanner: false,
             routes: RouteList.routes,
             theme: ThemeData(

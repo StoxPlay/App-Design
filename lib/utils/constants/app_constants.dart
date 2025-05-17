@@ -72,9 +72,9 @@ final List<ContestModel> contests = [
     timeLeft: "(09:10:59)",
     image: "assets/images/bank_wars.png",
     contestPriceList: [
-      ContestPrice(contestPrice: 500, spots: '30k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 1000, spots: '20k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 5000, spots: '10k', prizePool: "20,00,000"),
+      ContestPrice(contestPrice: 500, spots: '2000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 1000, spots: '1000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 5000, spots: '500', prizePool: "20,00,000"),
     ],
     stocks: [
       Stock(
@@ -239,9 +239,9 @@ final List<ContestModel> contests = [
     timeLeft: "(09:10:59)",
     image: "assets/images/battle_of_energy.png",
     contestPriceList: [
-      ContestPrice(contestPrice: 500, spots: '30k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 1000, spots: '20k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 5000, spots: '10k', prizePool: "20,00,000"),
+      ContestPrice(contestPrice: 500, spots: '2000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 1000, spots: '1000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 5000, spots: '500', prizePool: "20,00,000"),
     ],
     stocks: [
       Stock(
@@ -406,9 +406,9 @@ final List<ContestModel> contests = [
     timeLeft: "(09:10:59)",
     image: "assets/images/tech_clash.png",
     contestPriceList: [
-      ContestPrice(contestPrice: 500, spots: '30k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 1000, spots: '20k', prizePool: "8,10,000"),
-      ContestPrice(contestPrice: 5000, spots: '10k', prizePool: "20,00,000"),
+      ContestPrice(contestPrice: 500, spots: '2000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 1000, spots: '1000', prizePool: "8,10,000"),
+      ContestPrice(contestPrice: 5000, spots: '500', prizePool: "20,00,000"),
     ],
     stocks: [
       Stock(
@@ -568,3 +568,21 @@ final List<ContestModel> contests = [
     ],
   ),
 ];
+
+/// FontStyles
+final selectStocksStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 35.sp,
+  color: AppColors.purple661F,
+  height: 1.0,
+  letterSpacing: 0.0,
+  shadows: [
+    Shadow(
+      offset: Offset(0, 4),
+      blurRadius: 10,
+      color: AppColors.black.withOpacity(
+        0.15,
+      ), // #00000040 in Flutter ARGB format
+    ),
+  ],
+);

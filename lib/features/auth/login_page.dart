@@ -58,7 +58,7 @@ class LoginPage extends StatelessWidget {
                               SizedBox(
                                 width: double.infinity,
                                 child: Image.asset(
-                                  AppAssets.lightIconShadow,
+                                  AppAssets.lightSplashStrokes,
                                   fit:
                                       BoxFit
                                           .cover, // Ensure it covers the whole area
